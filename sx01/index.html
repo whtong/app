@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>客户端下载</title>
+    
+    <meta name="description"  content=""  ="">
+    <meta name="keywords"  content=""  ="">
+    <meta name="apple-mobile-web-app-capable"  content="yes"  ="">
+    <meta name="apple-mobile-web-app-status-bar-style"  content="black"  ="">
+    <meta name="format-detection"  content="telephone=no"  ="">
+    <meta name="format-detection" content="email=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <link href="./css/style.css" rel="Stylesheet" type="text/css">
+</head>
+<body>
+    <div class="header layout"><img src="./img/icon（1024x1024）.png"><span class="logo_text">沃呼通</span></div>
+    <div class="container-1">
+        <div class="title"><div class="line">客户端下载</div></div>
+        <div class="contentpane">
+            <div class="download">
+                <div class="dow_title">Android客户端</div>
+                <div class="dow_left">
+                    <div class="">日期：2021-02-01</div>
+                    <div class="">大小：15.1 MB</div>
+                    <div class="">版本：1.3.0</div>
+                </div>
+                <div class="dow_right">
+                    <a href="javascript:void(0)" class="btn_download" onclick="loadAndroid();">
+                        <img src="./img/icon_android.png">Android版
+                    </a>
+                </div>
+            </div>
+            <div class="download">
+                <div class="dow_title">IOS客户端</div>
+                <div class="dow_left">
+                    <div class="">日期：2021-02-01</div>
+                    <div class="">大小：8.1 MB</div>
+                    <div class="">版本：1.3.0</div>
+                </div>
+                <div class="dow_right">
+                    <a href="javascript:void(0)" class="btn_download" onclick="loadIos();">
+                        <img src="./img/icon_ios.png">IOS版
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer layout">
+        Copyright © 2013-2019
+    </div>
+    <script> 
+        function loadIos(){ 
+            window.location.href = "itms-services://?action=download-manifest&url=itms-services://?action=download-manifest&url=https://hollycas.oss-cn-beijing.aliyuncs.com/app_package/sx01/callapp-1.3.0.plist";
+        }
+  
+        function loadAndroid(){
+            window.location.href = "https://hollycas.oss-cn-beijing.aliyuncs.com/app_package/sx01/callapp-1.3.0.apk";
+        }
+
+    </script>
+
+
+</body></html>
