@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name = "format-detection" content = "telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"  />
+    <title>hollycas_mobile</title>
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+  <script src="https://open.work.weixin.qq.com/wwopen/js/jwxwork-1.0.0.js"></script>
+  <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+  <script >
+    $(function(){
+        $.ajax({url:"http://127.0.0.1:8080/cpTest/getJsToken",success:function(result){
+            console.log({
+              corpid: result.appId, // 必填，企业微信的corpid，必须与当前登录的企业一致
+              agentid: 1000003, // 必填，企业微信的应用id （e.g. 1000247）
+              timestamp: result.timestamp, // 必填，生成签名的时间戳
+              nonceStr: result.nonceStr, // 必填，生成签名的随机串
+              signature: result.signature,// 必填，签名，见附录-JS-SDK使用权限签名算法
+              jsApiList: ['selectExternalContact'], //必填，传入需要使用的接口名称
+            });
+
+            wx.agentConfig({
+              corpid: result.appId, // 必填，企业微信的corpid，必须与当前登录的企业一致
+              agentid: 1000003, // 必填，企业微信的应用id （e.g. 1000247）
+              timestamp: result.timestamp, // 必填，生成签名的时间戳
+              nonceStr: result.nonceStr, // 必填，生成签名的随机串
+              signature: result.signature,// 必填，签名，见附录-JS-SDK使用权限签名算法
+              jsApiList: ['selectExternalContact'], //必填，传入需要使用的接口名称
+              success: function(res) {
+                  console.log(res);
+              },
+              fail: function(res) {
+                  console.log(res);
+              }
+          });
+        }});
+    });
+  </script>
+</html>
