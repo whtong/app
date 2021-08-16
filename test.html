@@ -8,6 +8,7 @@
   </head>
   <body>
     <div id="app"></div>
+    <button id="send">群发</button>
   </body>
   <script src="https://open.work.weixin.qq.com/wwopen/js/jwxwork-1.0.0.js"></script>
   <script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
@@ -40,6 +41,28 @@
               }
           });
         }});
+
+        $("#send").click(()=>{
+            wx.invoke("shareToExternalContact", {
+                text: {
+                      content:"1111111",    // 文本内容
+                },
+                attachments: [
+                      {
+                            msgtype: "link",    // 消息类型，必填
+                            link: {
+                                  title: "111",        // H5消息标题
+                                  imgUrl: "www.baidu.com/1.png",    // H5消息封面图片URL
+                                  desc: "111",    // H5消息摘要
+                                  url: "www.baidu.com",        // H5消息页面url 必填
+                            },
+                      },
+                ]},function(res) {
+                  $("#app").html(JSON.stringify(res));
+                  console.log(res);
+              }
+            );
+        });
     });
   </script>
 </html>
