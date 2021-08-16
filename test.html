@@ -32,9 +32,10 @@
               jsApiList: ['shareToExternalContact'], //必填，传入需要使用的接口名称
               success: function(res) {
                   console.log(res);
+                  $("#app").html(JSON.stringify(res));
               },
               fail: function(res) {
-                $("#app").html(JSON.stringify(res));
+                  $("#app").html(JSON.stringify(res));
                   console.log(res);
               }
           });
