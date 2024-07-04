@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>微信代理跳转</title>
+</head>
+<body>
+</body>
+<script>
+ var redirect = getPara("url");
+ if(redirect){
+    location.href = redirect;
+ }
+
+ function getPara(name){
+    var url = location.href;
+    eval("var reg = /("+name+"=[A-Za-z0-9_,-@!#\.\:\/]*)/i")
+    var match = url.match(reg);
+    if(match && match.length > 1){
+        var arr = match[0].split("=");
+        arr.shift();
+        return arr.join('=');
+    }else{
+        return "";
+    }
+ }
+</script>
+</html>
